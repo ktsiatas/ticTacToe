@@ -2,12 +2,15 @@ package org.example;
 
 public class Board {
 
+    // These are constants for particular win conditions
     private final int[][] CORNERS = {{0, 0}, {0, 3}, {3, 0}, {3, 3}};
     private final int[][] LEFT_DIAGONAL = {{0, 0}, {1, 1}, {2, 2}, {3, 3}};
     private final int[][] RIGHT_DIAGONAL = {{0, 3}, {1, 2}, {2, 1}, {3, 0}};
     private final int LEFT_D_POS = 0;
     private final int RIGHT_D_POS = 1;
 
+    // These hold a running total for a particular win condition
+    // If something adds to either -4 or 4, a player won!
     private int[] colSum = {0 ,0 ,0 ,0};
     private int[] rowSum = {0, 0, 0 ,0};
     private int[] diagonalSum = {0, 0}; // top left, top right
@@ -28,6 +31,7 @@ public class Board {
         this.board = board;
     }
     public void placePiece(int x, int y, int player) {
+        // TODO
         // Should have a check here for valid placement
         // Error handling
 
